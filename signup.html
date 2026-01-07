@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIGN UP PAGE</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        align-items: center;
+      }
+
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 25px;
+        text-align: center;
+        font-size: 28px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #444;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="date"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus,
+      input[type="tel"]:focus,
+      input[type="email"]:focus,
+      input[type="date"]:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #4a90e2;
+        outline: none;
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+      }
+
+      .radio-group,
+      .checkbox-group {
+        display: flex;
+        gap: 20px;
+        margin: 10px 0;
+      }
+
+      .radio-option,
+      .checkbox-option {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      input[type="submit"],
+      button {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+        flex: 1;
+      }
+
+      input[type="submit"] {
+        background-color: #4a90e2;
+        color: white;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #357abd;
+      }
+
+      button {
+        background-color: #f0f0f0;
+        color: #333;
+      }
+
+      button:hover {
+        background-color: #e0e0e0;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 20px 15px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .btn-group {
+          flex-direction: column;
+        }
+      }
+    </style>
+    <script src="validate.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Please signup here!</h2>
+      <form action="another.html" onsubmit="return validate()">
+        <div class="form-group">
+          <label for="usernamee">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="usernamee"
+            placeholder="Enter your username"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="pswd">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="pswd"
+            placeholder="Enter your password"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="cnfrmpswd">Confirm Password</label>
+          <input
+            type="password"
+            name="password"
+            id="cnfrmpswd"
+            placeholder="Confirm your password"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phnno">Mobile Number</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phnno"
+            placeholder="Enter your mobile number"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="mailid">Email</label>
+          <input type="email" id="mailid" placeholder="Enter your email" />
+        </div>
+
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="gender" id="male" value="Male" />
+              <label for="male">Male</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="gender" id="female" value="Female" />
+              <label for="female">Female</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" name="dob" id="dob" />
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea
+            name="address"
+            id="address"
+            placeholder="Enter your address"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="qual">Qualification</label>
+          <select name="qualification" id="qual">
+            <option value="" disabled selected>
+              Select your qualification
+            </option>
+            <option value="ssc">SSC</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="graduate">Graduate</option>
+            <option value="postgraduate">Post Graduate</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="skills">Skills</label>
+          <select name="skills[]" multiple size="4" id="skills">
+            <option value="Java">Java</option>
+            <option value="HTML5">HTML5</option>
+            <option value="CSS3">CSS3</option>
+            <option value="JavaScript">JavaScript</option>
+          </select>
+          <small>Hold Ctrl/Cmd to select multiple skills</small>
+        </div>
+
+        <div class="form-group">
+          <label>Preferred Shift</label>
+          <div class="checkbox-group">
+            <div class="checkbox-option">
+              <input type="checkbox" name="shift" id="day" value="Day" />
+              <label for="day">Day</label>
+            </div>
+            <div class="checkbox-option">
+              <input type="checkbox" name="shift" id="night" value="Night" />
+              <label for="night">Night</label>
+            </div>
+            <div class="checkbox-option">
+              <input type="checkbox" name="shift" id="both" value="DN" />
+              <label for="both">Flexible</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="resume">Upload Resume</label>
+          <input
+            type="file"
+            name="resume"
+            id="resume"
+            accept=".pdf,.doc,.docx"
+          />
+          <small>Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+        </div>
+
+        <div class="btn-group">
+          <input type="submit" value="Register" />
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
